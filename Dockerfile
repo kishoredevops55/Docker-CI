@@ -1,2 +1,2 @@
 # syntax=docker/dockerfile:1
-FROM centos: latest
+FROM centos:latest
