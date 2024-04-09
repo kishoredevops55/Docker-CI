@@ -1,2 +1,2 @@
-# syntax=docker/dockerfile:1
+# syntax=docker/dockerfile:123
 FROM centos:latest
