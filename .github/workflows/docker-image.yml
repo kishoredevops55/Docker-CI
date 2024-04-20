@@ -25,6 +25,6 @@ jobs:
      GH_PAT: ${{ secrets.GH_PAT }}
      ACTION_MAIL: kisaron5@gmail.com
      ACTION_NAME: Kishoredevops55
-     OWNER: yourGitHubOrganisation
+     OWNER: kishoredevops55
      REPO_NAME: Docker-CI
             
