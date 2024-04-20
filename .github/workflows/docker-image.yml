@@ -1,6 +1,14 @@
 name: Docker Image CI
 
 on:
+  milestone:
+    types: [closed]
+  workflow_dispatch:
+    inputs:
+      milestoneId:
+        description: 'Milestone ID'     
+        required: true
+        default: '1'
   push:
     branches: [ "main" ]
   pull_request:
