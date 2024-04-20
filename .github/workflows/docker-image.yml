@@ -19,4 +19,12 @@ jobs:
       
     - name: wiki-page-creator-action
       uses: Decathlon/wiki-page-creator-action@v2.0.0
+    - name: Upload Release Notes to Wiki
+      uses: docker://decathlon/wiki-page-creator-action:2.0.0
+    env:
+     GH_PAT: ${{ secrets.GH_PAT }}
+     ACTION_MAIL: kisaron5@gmail.com
+     ACTION_NAME: Kishoredevops55
+     OWNER: yourGitHubOrganisation
+     REPO_NAME: Docker-CI
             
