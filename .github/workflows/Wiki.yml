@@ -1,25 +1,33 @@
-on: 
-  milestone:
-    types: [closed]
-name: Milestone Closure
+name: Wiki Page Creator Pipeline
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+
 jobs:
-  release-notes:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - name: Create Release Notes
-      uses: docker://decathlon/release-notes-generator-action:2.0.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        OUTPUT_FOLDER: temp_release_notes
-        USE_MILESTONE_TITLE: "true"
-    - name: Upload Release Notes to Wiki
-      uses: docker://decathlon/wiki-page-creator-action:latest
-      env:
-        ACTION_MAIL: kisaron5@gmail.com
-        ACTION_NAME: Kishoredevops55
-        GH_PAT: ${{ secrets.GH_PAT }}
-        MD_FOLDER: temp_release_notes
-        OWNER: Kishoredevops55
-        REPO_NAME: Docker-CI
-        SKIP_MD: README.md
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Generate Wiki Content
+        run: |
+          # Add your commands to generate Wiki content here
+          # For example, you might run a script to convert code comments to Markdown
+          echo "Generating Wiki content..."
+
+      - name: Upload to Wiki
+        uses: docker://decathlon/wiki-page-creator-action:latest
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          ACTION_MAIL: kisaron5@gmail.com
+          ACTION_NAME: Kishoredevops55
+          OWNER: Kishoredevops55
+          REPO_NAME: Docker-CI
+          MD_FOLDER: 'docs/'
+          SKIP_MD: 'README.md'
+          WIKI_PUSH_MESSAGE: 'Update Wiki content'
