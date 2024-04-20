@@ -35,7 +35,7 @@ jobs:
         ACTION_MAIL: kisaron5@gmail.com
         ACTION_NAME: Kishoredevops55
         GH_PAT: ${{ secrets.GH_PAT }}
-        MD_FOLDER: temp_release_notes
+        MD_FOLDER: Kishore.md
         OWNER: Kishoredevops55
         REPO_NAME: Docker-CI
         SKIP_MD: README.md
