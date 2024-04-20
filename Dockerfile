@@ -2,4 +2,4 @@
 FROM centos:latest
 RUN echo "\
      hello\
-     world Kishore"
+     world Kishore Sharma"
