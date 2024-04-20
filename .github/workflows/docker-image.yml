@@ -9,10 +9,6 @@ on:
         description: 'Milestone ID'     
         required: true
         default: '1'
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
 
