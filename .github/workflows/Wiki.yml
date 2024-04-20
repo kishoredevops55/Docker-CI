@@ -27,7 +27,7 @@ jobs:
           ACTION_MAIL: kisaron5@gmail.com
           ACTION_NAME: Kishoredevops55
           OWNER: Kishoredevops55
-          REPO_NAME: Docker-CI
-          MD_FOLDER: 'docs/*'
+          REPO_NAME: kishoredevops55/Docker-CI
+          MD_FOLDER: 'docs/Readme.md'
           SKIP_MD: 'README.md'
           WIKI_PUSH_MESSAGE: 'Update Wiki content'
