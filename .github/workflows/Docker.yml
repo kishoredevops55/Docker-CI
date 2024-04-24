@@ -14,7 +14,7 @@ env:
   IMAGE_NAME: kisaron5/otel-tempo-docker
   SHA: ${{ github.event.pull_request.head.sha || github.event.after }}
   # Use `latest` as the tag to compare to if empty, assuming that it's already pushed so 
-  COMPARE_TAG: v1
+  COMPARE_TAG: 6723b4a
 
 jobs:
   build:
