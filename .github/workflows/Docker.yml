@@ -11,10 +11,10 @@ on:
 env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: docker.io
-  IMAGE_NAME: kisaron5/otel-tempo-docker:v1
+  IMAGE_NAME: kisaron5/otel-tempo-docker
   SHA: ${{ github.event.pull_request.head.sha || github.event.after }}
   # Use `latest` as the tag to compare to if empty, assuming that it's already pushed so 
-  COMPARE_TAG: latest
+  COMPARE_TAG: v1
 
 jobs:
   build:
