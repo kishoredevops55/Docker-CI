@@ -26,6 +26,8 @@ protected_branches = [branch['name'] for branch in protected_branches_response.j
 response = requests.get(branches_url, headers=headers)
 branches = response.json()
 
+deleted_branches = []
+
 # Check each branch
 for branch in branches:
     branch_name = branch['name']
@@ -48,8 +50,13 @@ for branch in branches:
         delete_response = requests.delete(delete_branch_url + branch_name, headers=headers)
         if delete_response.status_code == 204:
             print(f"Deleted branch: {branch_name}")
+            deleted_branches.append(branch_name)
         else:
             print(f"Failed to delete branch: {branch_name} - {delete_response.status_code}")
 
-print("Completed checking and deleting old branches.")
+if not deleted_branches:
+    print("No branches were deleted as none were older than the specified threshold.")
+else:
+    print(f"Deleted branches: {', '.join(deleted_branches)}")
 
+print("Completed checking and deleting old branches.")
